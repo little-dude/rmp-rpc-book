@@ -10,6 +10,10 @@ To make it easier to follow and to skip chapters, all the code is also
 available on github, in the [rmp-rpc-demo repository](https://github.com/little-dude/rmp-rpc-demo).
 There is a branch per chapter.
 
+The content of this book is also available on
+[github](https://github.com/little-dude/rmp-rpc-book), so feel free to submit
+PRs or file issues.
+
 
 ## Why this book?
 
@@ -22,8 +26,8 @@ at explaining the concepts behind Tokio and introducing the different pieces of
 the ecosystem. But there are so many concepts to understand, and so many crates
 available that it can be hard at the beginning to know what you really need to
 build something (at least, that was my feeling when I started working on my
-[`rmp-rpc`](https://github.com/little-dude/rmp-rpc) crate). By building a real
-world protocol step by step, we aim at gradually putting into application the
+[first crate](https://github.com/little-dude/rmp-rpc). By building a real world
+protocol step by step, we aim at gradually putting into application the
 concepts and crates presented in the official documentation.
 
 
