@@ -33,8 +33,8 @@ concepts and crates presented in the official documentation.
 
 ## Who is the target audience?
 
-People who already know the basic concepts of Rust, and want to get started
-with Tokio.
+People who already know the basic concepts of Rust and want to get started with
+Tokio, but don't really know where to start.
 
 ## Disclaimer
 
