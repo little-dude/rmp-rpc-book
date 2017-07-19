@@ -31,3 +31,14 @@ concepts and crates presented in the official documentation.
 
 People who already know the basic concepts of Rust, and want to get started
 with Tokio.
+
+## Disclaimer
+
+Two things:
+
+- I am pretty much a beginner with Tokio and this book has not been under any
+  review by qualified people yet. It may promote anti-patterns, contain errors,
+  imprecisions, etc.
+- This is work in progress. There are _many_ things I'd like to add: more
+  explanations, more detailed examples, TLS support, graceful shutdown for the
+  server, etc. etc.
