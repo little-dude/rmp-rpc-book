@@ -1,3 +1,7 @@
+You can find the complete code for this chapter [on github](https://github.com/little-dude/rmp-rpc-demo/tree/chapter-2.1)
+
+------------
+
 # Codec
 
 In this chapter, we'll implement a `Codec` that converts a stream of bytes into

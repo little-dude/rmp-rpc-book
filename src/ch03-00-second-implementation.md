@@ -1,3 +1,7 @@
+You can find the complete code for this chapter [on github](https://github.com/little-dude/rmp-rpc-demo/tree/chapter-3)
+
+------------
+
 # Second implementation
 
 Using the full tokio stack, we built a basic MessagePack-RPC client and server

@@ -1,3 +1,7 @@
+You can find the complete code for this chapter [on github](https://github.com/little-dude/rmp-rpc-demo/tree/chapter-2.3.1)
+
+------------
+
 # First example
 
 In this part, we'll build a simple example server and make a few requests.

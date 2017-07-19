@@ -1,3 +1,7 @@
+You can find the complete code for this chapter [on github](https://github.com/little-dude/rmp-rpc-demo/tree/chapter-2.3.2)
+
+------------
+
 # Wrapping the server
 
 The previous example was quite tedious to write. In this chapter, we'll see

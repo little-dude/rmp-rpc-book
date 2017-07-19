@@ -1,4 +1,8 @@
-# Preliminaries
+You can find the complete code for this chapter [on github](https://github.com/little-dude/rmp-rpc-demo/tree/chapter-3.1)
+
+------------
+
+# Re-implementing the server
 
 We'll start by implementing the server. So let's empty `src/server.rs`, and
 import everything we'll need:
