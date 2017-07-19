@@ -1,0 +1,30 @@
+language: rust
+before_install:
+    - eval "$(ssh-agent -s)"
+    - openssl aes-256-cbc -K $encrypted_882df0673185_key -iv $encrypted_882df0673185_iv -in deploy.priv.enc -out deploy.priv -d &&
+      chmod 600 deploy.priv &&
+      ssh-add deploy.priv
+    - git config --global user.email "corentin.henry@gmail.com" &&
+      git config --global user.name "little-dude"
+rust:
+  - stable
+cache: cargo
+script:
+  - cargo install mdbook --force &&
+    mdbook build &&
+    git clone git@github.com:little-dude/rmp-rpc-book-build.git &&
+    rm -rf rmp-rpc-book-build/* &&
+    mv book/* rmp-rpc-book-build/ &&
+    cd rmp-rpc-book-build &&
+    git add . &&
+    git commit -m 'update' --allow-empty &&
+    git push origin master &&
+    cd .. &&
+    git clone --recursive git@github.com:little-dude/little-dude.github.io.git &&
+    cd little-dude.github.io/rmp-rpc-book/ &&
+    git fetch &&
+    git reset --hard origin/master &&
+    cd .. &&
+    git add . &&
+    git commit -m 'update book' &&
+    git push origin master
