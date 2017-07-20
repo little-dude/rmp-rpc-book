@@ -2,13 +2,12 @@
 
 This chapter gives an overview of the Tokio stack. I'll assume that you
 understand what futures are and how they work. If not, I recommend reading
-[this excellent blog
-post](http://asquera.de/blog/2017-03-01/the-future-with-futures/).
+[this excellent blog post](http://asquera.de/blog/2017-03-01/the-future-with-futures/).
 
 Disclaimer: Async IO and event loops are complex topics that I don't pretend to
-understand. I just know some basic concepts that I'll try to explain with my
+understand. I just know some basic concepts that I'll try to explain in my
 own words. Here is the thing: you don't need to understand these topics to use
-Tokio, and that what makes it awesome in my opinion.
+Tokio, and that what makes it awesome.
 
 ## tokio-core
 
@@ -29,7 +28,7 @@ Let's start with the main piece of Tokio:
   (aka "reactor" or "event loop") which runs futures. We can already run futures
   with threads (via [`std::thread::spawn`](https://doc.rust-lang.org/1.6.0/std/thread/fn.spawn.html) or pools of threads (via
   [`futures_cpupool`](https://docs.rs/futures-cpupool)), so why use an
-  event loop instead? I'm not entirely sure myself, but here are a few hints:
+  event loop instead?
 
   - Threads are expensive when there are many of them, due to context switches.
     You don't want to spawn thousands of threads, especially for IO extensive

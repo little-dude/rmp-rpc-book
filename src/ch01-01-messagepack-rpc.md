@@ -94,9 +94,9 @@ In the context of Rust we can say that a serialization format defines how to
 represent a `struct` as a stream of bytes.  This is what
 [serde](http://serde.rs/) does.
 
-The specificity of **MessagePack** is that it's similar to JSON, but is more
-compact, which makes it faster and lighter to send over the network for
-example. To quote [msgpack.org](msgpack.org), "it's like JSON, but fast and
+The nice thing about **MessagePack** is that it's similar to JSON, but is more
+compact, which makes it faster and lighter to send over the network.
+To quote [msgpack.org](msgpack.org), "it's like JSON, but fast and
 small". You can find the [specifications on
 github](https://github.com/msgpack/msgpack/blob/master/spec.md). In the Rust
 ecosystem, the main implementation of MessagePack is
@@ -113,11 +113,11 @@ messages. It is very similar to the JSON-RPC protocol described above:
 - requests must be answered with a response that carries the same ID
 - notifications must not be answered
 
-The main differences with JSON-RPC are:
+The main differences from JSON-RPC are:
 
 - it uses MessagePack instead of JSON
 - messages don't have a "version" field
 - message have a "type" field that tell wether they are notifications, requests or responses.
 
-There are other minor differences but we don't intend to give an exhaustive
+There are other minor differences, but we don't intend to give an exhaustive
 list in this document.

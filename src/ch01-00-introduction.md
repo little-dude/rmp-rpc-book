@@ -21,13 +21,13 @@ This guide does not intend to be a substitute to the [tokio documentation](https
 
 Actually, if you're starting with Tokio, you will probably have to look into
 the official documentation quite often. The intention is to provide a concrete
-example of how to build things with Tokio. The documentation does a great jobs
-at explaining the concepts behind Tokio and introducing the different pieces of
+examples of how to build things with Tokio. The documentation does a great job
+of explaining the concepts behind Tokio and introducing the different pieces of
 the ecosystem. But there are so many concepts to understand, and so many crates
 available that it can be hard at the beginning to know what you really need to
-build something (at least, that was my feeling when I started working on my
+build something (at least, that's how I felt when I started working on my
 [first crate](https://github.com/little-dude/rmp-rpc). By building a real world
-protocol step by step, we aim at gradually putting into application the
+protocol step by step, we aim at gradually applying the
 concepts and crates presented in the official documentation.
 
 
@@ -40,8 +40,8 @@ Tokio, but don't really know where to start.
 
 Two things:
 
-- I am pretty much a beginner with Tokio and this book has not been under any
-  review by qualified people yet. It may promote anti-patterns, contain errors,
+- I am pretty much a beginner with Tokio and this book has not been 
+  reviewed by qualified people yet. It may promote anti-patterns, contain errors,
   imprecisions, etc.
 - This is work in progress. There are _many_ things I'd like to add: more
   explanations, more detailed examples, TLS support, graceful shutdown for the
