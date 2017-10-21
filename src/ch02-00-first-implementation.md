@@ -8,5 +8,5 @@ whole tokio stack:
 - `tokio-service` for the service (see [chapter 2.3](ch02-03-00-service.md))
 
 Why an "incomplete" library? We'll see that using only `tokio-proto`, we cannot
-implement support for notifications. But worry not! this is something we'll fix
+implement support for notifications. But worry not! This is something we'll fix
 in [part 3](ch03-00-second-implementation).

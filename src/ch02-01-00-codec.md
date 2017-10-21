@@ -110,7 +110,7 @@ This can be improved in multiple ways:
   messagepack values":
   [`Value`](https://docs.rs/rmpv/0.4.0/rmpv/enum.Value.html).
 - The `type` field seems redundant. The rust type carries the same information
-  than the MessagePack-RPC `type` field. We can get rid of it.
+  as the MessagePack-RPC `type` field. We can get rid of it.
 - The `Response` type could be improved: we have a `Result` type in Rust, we
   don't need the error field to represent a error. Let's make the `result`
   field a `Result`.
@@ -341,7 +341,7 @@ impl Decoder for Codec {
 }
 ```
 
-Unfortunately, this won't work. It won't because we have no way to know if
+Unfortunately, this won't work. That's because we have no way to know if
 there are enough bytes to read in the `BytesMut` buffer to decode a full
 message. When tokio choses to call `decode`, the buffer may even be empty. And
 given our `Message::decode` implementation, this will panic.
@@ -350,7 +350,7 @@ given our `Message::decode` implementation, this will panic.
 #### Adding error handling
 
 If there are not enough bytes to read, we need to let tokio know that we need
-more bytes. Tokio we'll re-call the method later, when there is more to read.
+more bytes. Tokio will re-call the method later, when there is more to read.
 We do so by returning `Ok(None)`. But how do we know we need more bytes? Error
 handling! `Message::decode` could return a specific error when it fails to
 decode a message because it's incomplete. We can create a new `DecodeError`
@@ -543,14 +543,13 @@ impl Decoder for Codec {
 }
 ```
 
-I hope the comments are detailed enough to understand what happens. To sum up,
-the decoder is called regularly by tokio, each time with three possible
-outcomes:
+To sum up, the decoder is called regularly by tokio, each time with three
+possible outcomes:
 
 - We are able to read a message => return `Ok(message)` and remove these bytes
   from the buffer.
-- There are not enough byte to read a message => return `Ok(None)` to tell
+- There are not enough bytes to read a message => return `Ok(None)` to tell
   tokio to retry when there is more to read, and leave the buffer intact.
-- An error occurs:
+- An error occurs if:
     - An invalid MessagePack value is read => try to read the next one
     - An unknown io error occurs => return `Err(the_error)`
